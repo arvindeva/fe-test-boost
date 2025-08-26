@@ -18,6 +18,8 @@ export function BlogWizard() {
         return <SummaryStep wizard={wizard} />;
       case 3:
         return <div>Step 3 - Coming Soon</div>;
+      case 4:
+        return <div>Step 4 - Coming Soon</div>;
       default:
         return <div>Invalid step</div>;
     }

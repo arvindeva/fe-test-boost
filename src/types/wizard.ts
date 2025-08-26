@@ -21,4 +21,4 @@ export type WizardAction =
   | { type: "CLEAR_ERRORS" }
   | { type: "RESET" };
 
-export const TOTAL_STEPS = 3;
+export const TOTAL_STEPS = 4;
