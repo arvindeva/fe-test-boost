@@ -25,5 +25,13 @@ export const summarySchema = z.object({
     }),
 });
 
+export const contentSchema = z.object({
+  content: z
+    .string()
+    .min(1, "Blog content is required")
+    .max(999999, "Content must be less than 999,999 characters"),
+});
+
 export type MetadataFormData = z.infer<typeof metadataSchema>;
 export type SummaryFormData = z.infer<typeof summarySchema>;
+export type ContentFormData = z.infer<typeof contentSchema>;

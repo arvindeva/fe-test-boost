@@ -5,6 +5,7 @@ import { useWizard } from "@/hooks/useWizard";
 import { TOTAL_STEPS } from "@/types/wizard";
 import { MetadataStep } from "./steps/metadata-step";
 import { SummaryStep } from "./steps/summary-step";
+import { ContentStep } from "./steps/content-step";
 
 export function BlogWizard() {
   const wizard = useWizard();
@@ -17,7 +18,7 @@ export function BlogWizard() {
       case 2:
         return <SummaryStep wizard={wizard} />;
       case 3:
-        return <div>Step 3 - Coming Soon</div>;
+        return <ContentStep wizard={wizard} />;
       case 4:
         return <div>Step 4 - Coming Soon</div>;
       default:
