@@ -21,7 +21,7 @@ const DEFAULT_BLOG_POSTS: BlogPost[] = [
     summary: "This is just for testing the blog list functionality",
     category: "Business",
     content:
-      "Lorem ipsum dolor sit amet. This is obviously a test post to see if our blog list works correctly. Nothing meaningful here, just testing!",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec posuere enim nec porttitor ultrices. Proin sollicitudin lobortis pulvinar. In gravida id lacus nec convallis. Sed mollis odio a facilisis dapibus. Ut congue mollis venenatis. Pellentesque nec ultrices tortor. Pellentesque viverra diam posuere accumsan interdum. Vivamus ornare orci mi, nec congue erat dapibus et. Suspendisse pulvinar neque eget mauris volutpat cursus. Fusce efficitur velit id dapibus lacinia. Fusce auctor consectetur fringilla. Quisque eu dui facilisis, condimentum dui ac, imperdiet quam.",
     createdAt: new Date("2024-01-16"),
   },
 ];
@@ -58,14 +58,14 @@ export function useBlogPosts() {
     );
   };
 
-  const getBlogPost = (id: string) => {
-    return blogPosts.find((post) => post.id === id);
+  const getBlogPostBySlug = (slug: string) => {
+    return blogPosts.find((post) => post.slug === slug);
   };
 
   return {
     blogPosts,
     addBlogPost,
     deleteBlogPost,
-    getBlogPost,
+    getBlogPostBySlug,
   };
 }

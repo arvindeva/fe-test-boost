@@ -1,10 +1,21 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { useBlogPosts } from "@/hooks/useBlogPosts";
 import { BlogItem } from "./BlogItem";
+import { BlogPost } from "@/types/blog";
 
 export function BlogList() {
   const { blogPosts } = useBlogPosts();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
 
   const sortedPosts = blogPosts.sort(
     (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
