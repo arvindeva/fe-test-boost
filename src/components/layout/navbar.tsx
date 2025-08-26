@@ -9,14 +9,15 @@ export function Navbar() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center">
-            <Image
-              src="/logo.webp"
-              alt="Logo"
-              width={128}
-              height={128}
-              className="mr-2"
-              style={{ height: "auto" }}
-            />
+            <div className="relative w-32 h-32 mr-2">
+              <Image
+                src="/logo.webp"
+                alt="MyBoost Logo"
+                fill
+                sizes="128px"
+                className="object-contain"
+              />
+            </div>
             <span className="text-4xl font-medium text-white translate-y-0.5">
               Blog
             </span>
