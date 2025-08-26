@@ -9,13 +9,14 @@ export function Navbar() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center">
-            <div className="relative w-32 h-32 mr-2">
+            <div className="relative w-32 h-32 mr-2 flex-shrink-0">
               <Image
                 src="/logo.webp"
                 alt="MyBoost Logo"
                 fill
                 sizes="128px"
                 className="object-contain"
+                priority
               />
             </div>
             <span className="text-4xl font-medium text-white translate-y-0.5">
