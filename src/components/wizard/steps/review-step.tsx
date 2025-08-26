@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { useWizard } from "@/hooks/useWizard";
 import { useBlogPosts } from "@/hooks/useBlogPosts";
+import { generateSlug } from "@/lib/utils";
 import { CheckCircle, Loader2 } from "lucide-react";
 
 interface ReviewStepProps {
@@ -36,14 +37,8 @@ export function ReviewStep({ wizard }: ReviewStepProps) {
     setIsSubmitting(true);
 
     try {
-      // Create slug from title
-      const slug = formData.title
-        .toLowerCase()
-        .replace(/[^a-z0-9\s]/g, "")
-        .replace(/\s+/g, "-")
-        .trim();
+      const slug = generateSlug(formData.title);
 
-      // Add blog post
       addBlogPost({
         title: formData.title,
         author: formData.author,
@@ -53,10 +48,8 @@ export function ReviewStep({ wizard }: ReviewStepProps) {
         slug: slug,
       });
 
-      // Reset wizard
       reset();
 
-      // Redirect to homepage
       router.push("/");
     } catch (error) {
       console.error("Error creating blog post:", error);
