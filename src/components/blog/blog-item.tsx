@@ -31,8 +31,8 @@ export function BlogItem({ post }: BlogItemProps) {
         <span className="text-sm text-muted-foreground">{formattedDate}</span>{" "}
         <span className="text-sm text-foreground">by {post.author}</span>
       </div>
-      <p className="text-muted-foreground">{post.summary}</p>
       <Badge>{post.category}</Badge>
+      <p className="text-muted-foreground">{post.summary}</p>
       <div className="flex justify-between items-center"></div>
     </div>
   );
