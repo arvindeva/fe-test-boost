@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useWizard } from "@/hooks/useWizard";
 import { TOTAL_STEPS } from "@/types/wizard";
 import { MetadataStep } from "./steps/MetadataStep";
+import { SummaryStep } from "./steps/SummaryStep";
 
 export function BlogWizard() {
   const wizard = useWizard();
@@ -14,7 +15,7 @@ export function BlogWizard() {
       case 1:
         return <MetadataStep wizard={wizard} />;
       case 2:
-        return <div>Step 2 - Coming Soon</div>;
+        return <SummaryStep wizard={wizard} />;
       case 3:
         return <div>Step 3 - Coming Soon</div>;
       default:
