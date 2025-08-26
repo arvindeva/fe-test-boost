@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useBlogPosts } from "@/hooks/useBlogPosts";
-import { BlogItem } from "./BlogItem";
+import { BlogItem } from "./blog-item";
 import { BlogPost } from "@/types/blog";
 
 export function BlogList() {

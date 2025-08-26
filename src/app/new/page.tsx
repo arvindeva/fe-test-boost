@@ -1,5 +1,5 @@
 import { Navbar } from "@/components/layout/navbar";
-import { BlogWizard } from "@/components/wizard/BlogWizard";
+import { BlogWizard } from "@/components/wizard/blog-wizard";
 
 export default function NewBlogPage() {
   return (

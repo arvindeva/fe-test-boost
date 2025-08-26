@@ -3,8 +3,8 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useWizard } from "@/hooks/useWizard";
 import { TOTAL_STEPS } from "@/types/wizard";
-import { MetadataStep } from "./steps/MetadataStep";
-import { SummaryStep } from "./steps/SummaryStep";
+import { MetadataStep } from "./steps/metadata-step";
+import { SummaryStep } from "./steps/summary-step";
 
 export function BlogWizard() {
   const wizard = useWizard();

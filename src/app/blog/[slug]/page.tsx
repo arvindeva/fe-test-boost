@@ -1,5 +1,5 @@
 import { Navbar } from "@/components/layout/navbar";
-import { BlogDetail } from "@/components/blog/BlogDetail";
+import { BlogDetail } from "@/components/blog/blog-detail";
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;

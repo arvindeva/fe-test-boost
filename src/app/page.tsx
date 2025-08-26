@@ -1,5 +1,5 @@
 import { Navbar } from "@/components/layout/navbar";
-import { BlogList } from "@/components/blog/BlogList";
+import { BlogList } from "@/components/blog/blog-list";
 
 export default function Home() {
   return (
