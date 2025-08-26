@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/layout/navbar";
 import { BlogDetail } from "@/components/blog/blog-detail";
+import { PageContainer } from "@/components/ui/page-container";
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
@@ -11,9 +12,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   return (
     <div className="min-h-screen bg-gray-50">
       <Navbar />
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <PageContainer>
         <BlogDetail slug={slug} />
-      </main>
+      </PageContainer>
     </div>
   );
 }
