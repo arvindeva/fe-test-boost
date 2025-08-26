@@ -48,6 +48,12 @@ function wizardReducer(state: WizardState, action: WizardAction): WizardState {
         ...state,
         currentStep: Math.max(state.currentStep - 1, 1),
       };
+    
+    case "GO_TO_STEP":
+      return {
+        ...state,
+        currentStep: Math.max(1, Math.min(action.step, TOTAL_STEPS)),
+      };
 
     case "SET_ERRORS":
       return {
@@ -96,6 +102,10 @@ export function useWizard() {
     dispatch({ type: "CLEAR_ERRORS" });
   };
 
+  const goToStep = (step: number) => {
+    dispatch({ type: "GO_TO_STEP", step });
+  };
+
   const reset = () => {
     dispatch({ type: "RESET" });
   };
@@ -106,6 +116,7 @@ export function useWizard() {
     updateMultipleFields,
     nextStep,
     prevStep,
+    goToStep,
     setErrors,
     clearErrors,
     reset,

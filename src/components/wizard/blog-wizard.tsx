@@ -6,6 +6,7 @@ import { TOTAL_STEPS } from "@/types/wizard";
 import { MetadataStep } from "./steps/metadata-step";
 import { SummaryStep } from "./steps/summary-step";
 import { ContentStep } from "./steps/content-step";
+import { ReviewStep } from "./steps/review-step";
 
 export function BlogWizard() {
   const wizard = useWizard();
@@ -20,7 +21,7 @@ export function BlogWizard() {
       case 3:
         return <ContentStep wizard={wizard} />;
       case 4:
-        return <div>Step 4 - Coming Soon</div>;
+        return <ReviewStep wizard={wizard} />;
       default:
         return <div>Invalid step</div>;
     }

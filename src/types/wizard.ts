@@ -17,6 +17,7 @@ export type WizardAction =
   | { type: "UPDATE_MULTIPLE_FIELDS"; fields: Partial<WizardFormData> }
   | { type: "NEXT_STEP" }
   | { type: "PREV_STEP" }
+  | { type: "GO_TO_STEP"; step: number }
   | { type: "SET_ERRORS"; errors: Record<string, string> }
   | { type: "CLEAR_ERRORS" }
   | { type: "RESET" };
