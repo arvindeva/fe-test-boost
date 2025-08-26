@@ -27,7 +27,7 @@ export function Navbar() {
           <Link href="/new">
             <Button variant="secondary">
               <Plus className="w-4 h-4" />
-              Create
+              New
             </Button>
           </Link>
         </div>
