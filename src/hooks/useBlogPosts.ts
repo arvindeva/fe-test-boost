@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect } from "react";
 import { useLocalStorage } from "./useLocalStorage";
 import { BlogPost } from "@/types/blog";
 
@@ -22,7 +22,7 @@ const DEFAULT_BLOG_POSTS: BlogPost[] = [
     category: "Business",
     content:
       "Lorem ipsum dolor sit amet. This is obviously a test post to see if our blog list works correctly. Nothing meaningful here, just testing!",
-    createdAt: new Date("2024-01-10"),
+    createdAt: new Date("2024-01-16"),
   },
 ];
 
@@ -33,7 +33,7 @@ export function useBlogPosts() {
   );
 
   // Save default posts to localStorage if not already saved
-  React.useEffect(() => {
+  useEffect(() => {
     if (typeof window !== "undefined") {
       const existingPosts = window.localStorage.getItem("blog-posts");
       if (!existingPosts) {

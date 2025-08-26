@@ -6,6 +6,10 @@ import { BlogItem } from "./BlogItem";
 export function BlogList() {
   const { blogPosts } = useBlogPosts();
 
+  const sortedPosts = blogPosts.sort(
+    (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+  );
+
   if (blogPosts.length === 0) {
     return (
       <div className="text-center py-12">
@@ -20,8 +24,8 @@ export function BlogList() {
   }
 
   return (
-    <div className="">
-      {blogPosts.map((post) => (
+    <div className="flex flex-col gap-y-12">
+      {sortedPosts.map((post) => (
         <BlogItem key={post.id} post={post} />
       ))}
     </div>
