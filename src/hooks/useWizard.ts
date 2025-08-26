@@ -48,7 +48,7 @@ function wizardReducer(state: WizardState, action: WizardAction): WizardState {
         ...state,
         currentStep: Math.max(state.currentStep - 1, 1),
       };
-    
+
     case "GO_TO_STEP":
       return {
         ...state,
