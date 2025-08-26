@@ -9,6 +9,7 @@ import { useWizard } from "@/hooks/useWizard";
 import { useBlogPosts } from "@/hooks/useBlogPosts";
 import { generateSlug } from "@/lib/utils";
 import { CheckCircle, Loader2 } from "lucide-react";
+import { StepHeader } from "../step-header";
 
 interface ReviewStepProps {
   wizard: ReturnType<typeof useWizard>;
@@ -61,12 +62,10 @@ export function ReviewStep({ wizard }: ReviewStepProps) {
 
   return (
     <div className="space-y-6">
-      <div>
-        <h2 className="text-xl font-semibold">Review & Submit</h2>
-        <p className="text-muted-foreground">
-          Review your blog post details and submit to publish.
-        </p>
-      </div>
+      <StepHeader 
+        title="Review & Submit"
+        description="Review your blog post details and submit to publish."
+      />
 
       <div className="space-y-6">
         <div>

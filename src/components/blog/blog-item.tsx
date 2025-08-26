@@ -29,7 +29,7 @@ export function BlogItem({ post }: BlogItemProps) {
         </Link>
       </h2>
 
-      <p className="text-gray-600">{post.summary}</p>
+      <p className="text-muted-foreground">{post.summary}</p>
       <Badge>{post.category}</Badge>
 
       <div className="flex justify-between items-center">

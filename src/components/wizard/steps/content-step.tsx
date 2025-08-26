@@ -14,6 +14,7 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 import { contentSchema, ContentFormData } from "@/lib/validations/wizard";
 import { useWizard } from "@/hooks/useWizard";
+import { StepHeader } from "../step-header";
 
 interface ContentStepProps {
   wizard: ReturnType<typeof useWizard>;
@@ -38,12 +39,10 @@ export function ContentStep({ wizard }: ContentStepProps) {
 
   return (
     <div className="space-y-6">
-      <div>
-        <h2 className="text-xl font-semibold">Blog Content</h2>
-        <p className="text-muted-foreground">
-          Write the main content of your blog post.
-        </p>
-      </div>
+      <StepHeader 
+        title="Blog Content"
+        description="Write the main content of your blog post."
+      />
 
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">

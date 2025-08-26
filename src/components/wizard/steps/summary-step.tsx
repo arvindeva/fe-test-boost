@@ -22,6 +22,7 @@ import {
 import { summarySchema, SummaryFormData } from "@/lib/validations/wizard";
 import { useWizard } from "@/hooks/useWizard";
 import { BLOG_CATEGORIES } from "@/constants/categories";
+import { StepHeader } from "../step-header";
 
 interface SummaryStepProps {
   wizard: ReturnType<typeof useWizard>;
@@ -46,12 +47,10 @@ export function SummaryStep({ wizard }: SummaryStepProps) {
 
   return (
     <div className="space-y-6">
-      <div>
-        <h2 className="text-xl font-semibold">Blog Summary & Category</h2>
-        <p className="text-muted-foreground">
-          Add a brief summary and select a category for your blog post.
-        </p>
-      </div>
+      <StepHeader 
+        title="Blog Summary & Category"
+        description="Add a brief summary and select a category for your blog post."
+      />
 
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">

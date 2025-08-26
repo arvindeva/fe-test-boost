@@ -14,6 +14,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { metadataSchema, MetadataFormData } from "@/lib/validations/wizard";
 import { useWizard } from "@/hooks/useWizard";
+import { StepHeader } from "../step-header";
 
 interface MetadataStepProps {
   wizard: ReturnType<typeof useWizard>;
@@ -39,12 +40,10 @@ export function MetadataStep({ wizard }: MetadataStepProps) {
 
   return (
     <div className="space-y-6">
-      <div>
-        <h2 className="text-xl font-semibold">Blog Metadata</h2>
-        <p className="text-muted-foreground">
-          Enter the basic information for your blog post.
-        </p>
-      </div>
+      <StepHeader 
+        title="Blog Metadata"
+        description="Enter the basic information for your blog post."
+      />
 
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
