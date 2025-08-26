@@ -1,4 +1,5 @@
 import { Navbar } from "@/components/layout/navbar";
+import { BlogList } from "@/components/blog/BlogList";
 
 export default function Home() {
   return (
@@ -8,7 +9,7 @@ export default function Home() {
         <h1 className="text-3xl font-bold text-gray-900 mb-8">
           Latest Blog Posts
         </h1>
-        {/* Blog posts will go here */}
+        <BlogList />
       </main>
     </div>
   );
