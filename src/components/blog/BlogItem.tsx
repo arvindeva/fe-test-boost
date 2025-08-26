@@ -23,11 +23,9 @@ export function BlogItem({ post }: BlogItemProps) {
   return (
     <div className="flex flex-col gap-y-2">
       <span className="text-sm text-muted-foreground">{formattedDate}</span>
-      <Link href={`/blog/${post.id}`}>
-        <h2 className="text-xl font-semibold text-foreground hover:text-blue-600">
-          {post.title}
-        </h2>
-      </Link>
+      <h2 className="text-xl font-semibold text-foreground hover:text-blue-600">
+        <Link href={`/blog/${post.id}`}>{post.title}</Link>
+      </h2>
 
       <p className="text-gray-600">{post.summary}</p>
       <Badge>{post.category}</Badge>
