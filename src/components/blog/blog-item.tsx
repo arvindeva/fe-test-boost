@@ -22,19 +22,18 @@ export function BlogItem({ post }: BlogItemProps) {
 
   return (
     <div className="flex flex-col gap-y-2">
-      <span className="text-sm text-muted-foreground">{formattedDate}</span>
       <h2 className="text-xl font-semibold text-foreground">
         <Link className="hover:text-blue-600" href={`/blog/${post.slug}`}>
-          {post.title}
+          {post.title}{" "}
         </Link>
       </h2>
-
+      <div>
+        <span className="text-sm text-muted-foreground">{formattedDate}</span>{" "}
+        <span className="text-sm text-foreground">by {post.author}</span>
+      </div>
       <p className="text-muted-foreground">{post.summary}</p>
       <Badge>{post.category}</Badge>
-
-      <div className="flex justify-between items-center">
-        <span className="text-sm text-foreground">By {post.author}</span>
-      </div>
+      <div className="flex justify-between items-center"></div>
     </div>
   );
 }

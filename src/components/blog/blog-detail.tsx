@@ -71,28 +71,21 @@ export function BlogDetail({ slug }: BlogDetailProps) {
       <div className="mb-6">
         <BackToHomeButton />
       </div>
-
-      <header className="mb-8">
-        <div className="flex items-center gap-4 mb-4">
-          <Badge>{post.category}</Badge>
-          <span className="text-sm text-muted-foreground">{formattedDate}</span>
+      <header className="mb-8 flex flex-col gap-y-4">
+        <div className="flex justify-between items-center">
+          <h1 className="text-4xl font-bold text-foreground">{post.title}</h1>
+          <Button variant="destructive" size="sm" onClick={handleDelete}>
+            <Trash2 className="w-4 h-4 mr-2" />
+            Delete
+          </Button>
         </div>
-
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">{post.title}</h1>
-
-        <p className="text-xl text-gray-600 mb-4">{post.summary}</p>
-
-        <div className="flex justify-between items-center mb-6">
-          <p className="text-sm text-gray-500">By {post.author}</p>
-        </div>
-        <Button variant="destructive" size="sm" onClick={handleDelete}>
-          <Trash2 className="w-4 h-4 mr-2" />
-          Delete
-        </Button>
+        <Badge>{post.category}</Badge>
+        <span className="text-sm text-muted-foreground">{formattedDate}</span>
+        <p className="text-xl text-muted-foreground mb-4">{post.summary}</p>
+        <span className="text-sm text-muted-foreground">By {post.author}</span>
       </header>
-
       <div className="prose prose-lg max-w-none">
-        <div className="whitespace-pre-wrap text-gray-700 leading-relaxed">
+        <div className="whitespace-pre-wrap text-foreground leading-relaxed">
           {post.content}
         </div>
       </div>
