@@ -24,7 +24,7 @@ export function BlogItem({ post }: BlogItemProps) {
     <div className="flex flex-col gap-y-2">
       <span className="text-sm text-muted-foreground">{formattedDate}</span>
       <Link href={`/blog/${post.id}`}>
-        <h2 className="text-xl font-semibold text-gray-900 hover:text-blue-600">
+        <h2 className="text-xl font-semibold text-foreground hover:text-blue-600">
           {post.title}
         </h2>
       </Link>
@@ -33,7 +33,7 @@ export function BlogItem({ post }: BlogItemProps) {
       <Badge>{post.category}</Badge>
 
       <div className="flex justify-between items-center">
-        <span className="text-sm text-gray-500">By {post.author}</span>
+        <span className="text-sm text-foreground">By {post.author}</span>
       </div>
     </div>
   );
