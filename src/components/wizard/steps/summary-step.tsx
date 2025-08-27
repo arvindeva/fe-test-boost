@@ -62,7 +62,7 @@ export function SummaryStep({ wizard }: SummaryStepProps) {
                 <FormLabel>Blog Summary *</FormLabel>
                 <FormControl>
                   <Input
-                    placeholder="Enter a brief summary or excerpt of your blog post"
+                    placeholder="Enter a brief summary"
                     {...field}
                     onChange={(e) => {
                       field.onChange(e);

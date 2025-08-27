@@ -40,7 +40,7 @@ export function MetadataStep({ wizard }: MetadataStepProps) {
 
   return (
     <div className="space-y-6">
-      <StepHeader 
+      <StepHeader
         title="Blog Metadata"
         description="Enter the basic information for your blog post."
       />
@@ -52,7 +52,7 @@ export function MetadataStep({ wizard }: MetadataStepProps) {
             name="title"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Blog Title *</FormLabel>
+                <FormLabel>Blog Post Title *</FormLabel>
                 <FormControl>
                   <Input
                     placeholder="Enter your blog post title"
