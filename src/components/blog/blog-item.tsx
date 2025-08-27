@@ -21,19 +21,21 @@ export function BlogItem({ post }: BlogItemProps) {
   }, [post.createdAt]);
 
   return (
-    <div className="flex flex-col gap-y-2">
+    <div className="flex flex-col gap-y-1.5">
       <h2 className="text-xl font-semibold text-foreground">
-        <Link className="hover:text-blue-600" href={`/blog/${post.slug}`}>
+        <Link
+          className="hover:text-blue-600 active:text-blue-800 transition-colors duration-200"
+          href={`/blog/${post.slug}`}
+        >
           {post.title}{" "}
         </Link>
       </h2>
       <div>
-        <span className="text-sm text-muted-foreground">{formattedDate}</span>{" "}
-        <span className="text-sm text-foreground">by {post.author}</span>
+        <span className="text-muted-foreground">{formattedDate}</span>{" "}
+        <span className="text-foreground">by {post.author}</span>
       </div>
-      <Badge>{post.category}</Badge>
       <p className="text-muted-foreground">{post.summary}</p>
-      <div className="flex justify-between items-center"></div>
+      <Badge>{post.category}</Badge>
     </div>
   );
 }

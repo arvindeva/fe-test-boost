@@ -32,7 +32,7 @@ export function BlogWizard() {
       <CardHeader>
         <CardTitle className="flex items-center justify-between">
           <h1 className="text-xl sm:text-3xl">Create Blog Post</h1>
-          <span className="text-sm font-normal text-muted-foreground">
+          <span className="font-normal text-muted-foreground">
             Step {currentStep} of {TOTAL_STEPS}
           </span>
         </CardTitle>

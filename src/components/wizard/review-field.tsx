@@ -3,15 +3,15 @@ import { Badge } from "@/components/ui/badge";
 interface ReviewFieldProps {
   label: string;
   value: string | undefined;
-  type?: "text" | "badge" | "content";
+  type?: "text" | "content";
   fallback?: string;
 }
 
-export function ReviewField({ 
-  label, 
-  value, 
-  type = "text", 
-  fallback = "Not provided" 
+export function ReviewField({
+  label,
+  value,
+  type = "text",
+  fallback = "Not provided",
 }: ReviewFieldProps) {
   const renderValue = () => {
     if (!value) {
@@ -19,9 +19,6 @@ export function ReviewField({
     }
 
     switch (type) {
-      case "badge":
-        return <Badge>{value}</Badge>;
-      
       case "content":
         return (
           <div className="max-h-60 overflow-y-auto bg-gray-50 p-3 rounded border">
@@ -30,7 +27,7 @@ export function ReviewField({
             </pre>
           </div>
         );
-      
+
       default:
         return <p className="text-foreground">{value}</p>;
     }

@@ -73,7 +73,6 @@ export function ReviewStep({ wizard }: ReviewStepProps) {
         <ReviewField
           label="Category"
           value={formData.category}
-          type="badge"
           fallback="Not selected"
         />
         <ReviewField label="Summary" value={formData.summary} />

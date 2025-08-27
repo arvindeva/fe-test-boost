@@ -68,21 +68,21 @@ export function BlogDetail({ slug }: BlogDetailProps) {
 
   return (
     <article className="max-w-none">
-      <div className="mb-6">
+      <div className="mb-6 flex justify-between items-center">
         <BackToHomeButton />
+        <Button variant="destructive" size="sm" onClick={handleDelete}>
+          <Trash2 className="w-4 h-4 mr-2" />
+          Delete
+        </Button>
       </div>
       <header className="mb-8 flex flex-col gap-y-4">
-        <div className="flex justify-between items-center">
-          <h1 className="text-4xl font-bold text-foreground">{post.title}</h1>
-          <Button variant="destructive" size="sm" onClick={handleDelete}>
-            <Trash2 className="w-4 h-4 mr-2" />
-            Delete
-          </Button>
-        </div>
+        <h1 className="text-2xl md:text-4xl font-bold text-foreground">
+          {post.title}
+        </h1>
         <Badge>{post.category}</Badge>
-        <span className="text-sm text-muted-foreground">{formattedDate}</span>
-        <p className="text-xl text-muted-foreground mb-4">{post.summary}</p>
-        <span className="text-sm text-muted-foreground">By {post.author}</span>
+        <p className="text-muted-foreground">{formattedDate}</p>
+        <p className="text-muted-foreground">{post.summary}</p>
+        <p className="text-foreground">By {post.author}</p>
       </header>
       <div className="prose prose-lg max-w-none">
         <div className="whitespace-pre-wrap text-foreground leading-relaxed">
