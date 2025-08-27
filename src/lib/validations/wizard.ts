@@ -1,5 +1,5 @@
 import * as z from "zod";
-import { BLOG_CATEGORIES } from "@/constants/categories";
+import { BLOG_CATEGORIES, BlogCategory } from "@/constants/categories";
 
 export const metadataSchema = z.object({
   title: z
@@ -20,7 +20,7 @@ export const summarySchema = z.object({
   category: z
     .string()
     .min(1, "Category is required")
-    .refine((val) => BLOG_CATEGORIES.includes(val as any), {
+    .refine((val) => BLOG_CATEGORIES.includes(val as BlogCategory), {
       message: "Please select a valid category",
     }),
 });

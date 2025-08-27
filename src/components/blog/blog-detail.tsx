@@ -59,7 +59,7 @@ export function BlogDetail({ slug }: BlogDetailProps) {
           Blog post not found
         </h1>
         <p className="text-muted-foreground mb-6">
-          The blog post you're looking for doesn't exist.
+          The blog post you&apos;re looking for doesn&apos;t exist.
         </p>
         <BackToHomeButton />
       </div>
