@@ -22,7 +22,7 @@ export function BlogItem({ post }: BlogItemProps) {
 
   return (
     <div className="flex flex-col gap-y-1.5">
-      <h2 className="text-xl font-semibold text-foreground">
+      <h2 className="text-2xl font-semibold text-foreground">
         <Link
           className="hover:text-blue-600 active:text-blue-800 transition-colors duration-200"
           href={`/blog/${post.slug}`}

@@ -11,7 +11,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { Textarea } from "@/components/ui/textarea";
+import { Input } from "@/components/ui/input";
 import {
   Select,
   SelectContent,
@@ -47,7 +47,7 @@ export function SummaryStep({ wizard }: SummaryStepProps) {
 
   return (
     <div className="space-y-6">
-      <StepHeader 
+      <StepHeader
         title="Blog Summary & Category"
         description="Add a brief summary and select a category for your blog post."
       />
@@ -61,9 +61,8 @@ export function SummaryStep({ wizard }: SummaryStepProps) {
               <FormItem>
                 <FormLabel>Blog Summary *</FormLabel>
                 <FormControl>
-                  <Textarea
+                  <Input
                     placeholder="Enter a brief summary or excerpt of your blog post"
-                    className="min-h-[100px] resize-none"
                     {...field}
                     onChange={(e) => {
                       field.onChange(e);
@@ -71,9 +70,6 @@ export function SummaryStep({ wizard }: SummaryStepProps) {
                     }}
                   />
                 </FormControl>
-                <div className="text-sm text-muted-foreground">
-                  {field.value?.length || 0}/500 characters
-                </div>
                 <FormMessage />
               </FormItem>
             )}

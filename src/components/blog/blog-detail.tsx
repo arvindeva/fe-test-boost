@@ -75,14 +75,17 @@ export function BlogDetail({ slug }: BlogDetailProps) {
           Delete
         </Button>
       </div>
-      <header className="mb-8 flex flex-col gap-y-4">
+      <header className="mb-8 flex flex-col gap-y-2">
         <h1 className="text-2xl md:text-4xl font-bold text-foreground">
           {post.title}
         </h1>
-        <Badge>{post.category}</Badge>
-        <p className="text-muted-foreground">{formattedDate}</p>
+        <p className="text-muted-foreground">
+          {formattedDate}{" "}
+          <span className="text-foreground">by {post.author}</span>
+        </p>
         <p className="text-muted-foreground">{post.summary}</p>
-        <p className="text-foreground">By {post.author}</p>
+
+        <Badge>{post.category}</Badge>
       </header>
       <div className="prose prose-lg max-w-none">
         <div className="whitespace-pre-wrap text-foreground leading-relaxed">

@@ -35,9 +35,7 @@ export function ReviewField({
 
   return (
     <div>
-      <h3 className="text-sm font-medium text-muted-foreground mb-2">
-        {label}
-      </h3>
+      <h3 className="text-sm font-medium text-muted-foreground">{label}</h3>
       {renderValue()}
     </div>
   );
